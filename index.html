@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js 과제 포트폴리오</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; padding: 30px 10px; display: flex; flex-direction: column; align-items: center; }
+        header { text-align: center; margin-bottom: 30px; }
+        header h1 { font-size: 1.7rem; color: #111; margin-bottom: 5px; }
+        header p { font-size: 0.9rem; color: #666; }
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1050px; width: 100%; }
+        .box { background: #ffffff; border-radius: 10px; border: 1px solid #e1e4e6; padding: 15px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .box h3 { font-size: 1rem; margin-bottom: 10px; color: #333; width: 100%; border-left: 3px solid #007bff; padding-left: 8px; }
+        .canvas-holder { background-color: #fafafa; border-radius: 6px; overflow: hidden; display: flex; justify-content: center; align-items: center; width: 100%; }
+        @media (max-width: 850px) { .grid-container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>p5.js 과제 제출 포트폴리오</h1>
+        <p>2행 2열 정적 ➡️ 동적 순서 배치 완료</p>
+    </header>
+    <div class="grid-container">
+        <div class="box"><h3>과제 1 (정적 조형 아케이드)</h3><div class="canvas-holder" id="canvas-v1"></div></div>
+        <div class="box"><h3>과제 4 (동적 추상 인터랙션)</h3><div class="canvas-holder" id="canvas-v4"></div></div>
+        <div class="box"><h3>과제 2 (정적 캐릭터 디자인)</h3><div class="canvas-holder" id="canvas-v2"></div></div>
+        <div class="box"><h3>과제 3 (동적 반응형 캐릭터)</h3><div class="canvas-holder" id="canvas-v3"></div></div>
+    </div>
+    <script>
+        new p5((p) => {
+            p.setup = () => { p.createCanvas(500, 350).parent('canvas-v1'); p.textSize(20); p.fill(0); p.noLoop(); };
+            p.draw = () => { p.scale(500/600, 350/400); p.noStroke(); p.fill(255, 0, 0); p.rect(0, 0, 50, 280); p.fill(230, 0, 25); p.rect(50, 0, 50, 280); p.fill(204, 0, 51); p.rect(100, 0, 50, 280); p.fill(179, 0, 76); p.rect(150, 0, 50, 280); p.fill(153, 0, 102); p.rect(200, 0, 50, 280); p.fill(128, 0, 128); p.rect(250, 0, 50, 280); p.fill(102, 0, 153); p.rect(300, 0, 50, 280); p.fill(77, 0, 179); p.rect(350, 0, 50, 280); p.fill(51, 0, 204); p.rect(400, 0, 50, 280); p.fill(26, 0, 230); p.rect(450, 0, 50, 280); p.fill(13, 0, 242); p.rect(500, 0, 50, 280); p.fill(0, 0, 255); p.rect(550, 0, 50, 280); p.stroke(0); p.fill(180, 0, 0); p.rect(0,0,50,180); p.rect(0,200,50,80); p.fill(150, 0, 50); p.rect(70,0,50,40); p.square(70,60,50); p.rect(70,130,200,150); p.rect(140,0,130,110); p.fill(100, 0, 120); p.rect(290,0,120,70); p.square(290,90,70); p.square(380,90,70); p.rect(290,180,160,100); p.fill(50, 0, 180); p.rect(430,0,60,70); p.rect(470,90,20,150); p.square(470,260,20); p.fill(0, 0, 220); p.rect(510,0,90,170); p.square(510,190,90); p.stroke(190); p.fill(255); p.triangle(380,250,360,280,400,280); p.triangle(340,250,320,280,360,280); p.square(400,250,30); p.square(490,220,30); p.square(490,250,30); p.square(580,190,30); p.rect(580,220,30,60); p.stroke(200, 255, 235); p.strokeWeight(10); p.fill(200, 255, 235); p.point(415,210); p.point(505,180); p.point(595,150); p.stroke(0); p.strokeWeight(2); p.fill(255,200,0); p.quad(430,250,  410,220, 440,200, 460,230); p.fill(97, 219, 213); p.quad(435,236, 431,231, 439,226, 443,232); p.quad(438,221, 434,215, 440,211, 444,217); p.quad(422,229, 418,223, 424,219, 428,225); p.noStroke(); p.fill(255); p.rect(80,50,10,40); p.rect(90,50,15,20); p.rect(115,50,10,40); p.rect(135,50,25,10); p.rect(150,60,10,30); p.rect(135,70,15,20); p.rect(170,50,10,20); p.rect(190,50,10,40); p.square(180,60,10); p.stroke(0); p.strokeWeight(10); p.fill(255,200,0); p.circle(145,190,130); p.strokeWeight(1); p.fill(0,100,255); p.triangle(120,160, 120,220, 180,190); p.noStroke(); p.fill(150); p.triangle(430,280, 440,280, 435,275); p.triangle(440,280, 450,280, 445,270); p.triangle(450,280, 460,280, 455,261); p.triangle(460,280, 470,280, 465,270); p.triangle(470,280, 480,280, 475,251); p.triangle(480,280, 490,280, 485,271); p.triangle(520,280, 530,280, 525,251); p.triangle(530,280, 540,280, 535,241); p.triangle(540,280, 550,280, 545,261); p.triangle(550,280, 560,280, 555,251); p.triangle(560,280, 570,280, 565,231); p.triangle(570,280, 580,280, 575,241); p.stroke(255); p.strokeWeight(2); p.fill(0); p.rect(0, 280,600,120); p.noStroke(); p.fill(50); p.rect(10,290,130,110); p.rect(150,290,130,110); p.rect(290,290,130,110); p.rect(430,290,130,110); p.rect(570,290,30,110); };
+        });
+        new p5((p) => {
+            p.setup = () => { p.createCanvas(500, 350).parent('canvas-v4'); p.textSize(20); p.colorMode(p.RGB); };
+            p.draw = () => { p.scale(500/600, 350/400); let t = p.millis() * 0.001; let c1 = p.color(190, 190, 190); let c2 = p.color(220, 230, 255); let amt = (p.sin(t) + 1) / 2; let bgColor = p.lerpColor(c1, c2, amt); p.background(bgColor); p.fill(0); p.text("X: " + p.mouseX + "   Y: " + p.mouseY, 20, 30); let circleSize = 150 + p.sin(p.frameCount * 0.05) * 10; let arcX = 500 + p.cos(p.frameCount * 0.03) * 15; let ellipseW = 190 + p.sin(p.frameCount * 0.04) * 20; let sparkle = p.random(5, 12); let colorA = p.color(255, 80, 80, 140); let colorB = p.color(255, 140, 180, 140); let movingColor = p.lerpColor(colorA, colorB, amt); p.stroke(95, 30, 70, 140); p.strokeWeight(30); p.fill(movingColor); p.circle(120, 100, circleSize); p.noStroke(); p.fill(0, 200, 100, 120); p.triangle(130, 140, 20, 170, 90, 230); p.fill(255, 200, 0, 140); p.arc(arcX, 30, 150, 150, 0, p.PI); p.fill(80, 17, 0, 200); p.ellipse(360, 120, 80, 80); p.fill(100, 200, 255, 120); p.ellipse(180, 290, ellipseW, 80); p.fill(25, 15, 17, 179); p.square(30, 350, 40); p.fill(255, 155, 17, 179); p.rect(40, 300, 150, 80); p.stroke(0); p.strokeWeight(1); p.fill(255, 100, 200, 120); p.triangle(500, 300, 550, 350, 450, 30); p.noStroke(); p.fill(255, 155, 67, 134); p.ellipse(520, 330, 120, 120); p.fill(255); p.arc(350, 250, 100, 100, 0, p.radians(270)); p.fill(255); p.quad(303,170, 170,200, 160,260, 100,270); p.stroke(255); p.strokeWeight(sparkle); p.point(105,200); p.stroke(0); p.strokeWeight(4); p.line(60,20, 500, 220); p.strokeWeight(1); p.line(90, 0, 470, 300); p.strokeWeight(15); p.point(440,300); p.strokeWeight(5); p.line(430,90, 460, 110); p.strokeWeight(2); p.line(200, 0, 300, 400); p.line(100, 250, 500, 180); p.line(0, 350, 600, 50); };
+        });
+        new p5((p) => {
+            let bgColor = '#E3F2FD'; let isWink = false;
+            p.setup = () => { p.createCanvas(400, 450).parent('canvas-v2'); p.noLoop(); };
+            p.draw = () => { p.scale(1, 450/600); p.background(bgColor); p.noStroke(); p.fill('#3A2A24'); p.ellipse(200, 300, 300, 400); p.noStroke(); p.fill('#FFE4D6'); p.ellipse(200, 280, 200, 260); p.fill('#3A2A24'); p.rect(100,150,200,100); p.fill('#FFE4D6'); p.triangle(150,250, 180,250, 210,160); p.fill(255, 170, 180, 120); p.ellipse(140, 320, 45, 25); p.ellipse(260, 320, 45, 25); if (isWink) { p.stroke(0); p.strokeWeight(2); p.line(150, 260, 185, 260); } else { p.noStroke(); p.fill(255); p.ellipse(160, 280, 40, 30); p.fill('#3B2F2F'); p.ellipse(160, 280, 25, 25); p.fill(255); p.ellipse(155, 275, 6, 6); } p.noStroke(); p.fill(255); p.ellipse(240, 280, 40, 30); p.fill('#3B2F2F'); p.ellipse(240, 280, 25, 25); p.fill(255); p.ellipse(235, 275, 6, 6); p.noFill(); p.stroke(0); p.strokeWeight(2); p.arc(160, 275, 40, 20, p.PI, p.TWO_PI); p.arc(240, 275, 40, 20, p.PI, p.TWO_PI); p.noStroke(); p.fill('#FFCCB3'); p.triangle(200, 300, 190, 330, 210, 330); p.stroke('#B08968'); p.noFill(); p.circle(160,280,60); p.circle(240,280,60); p.line(190,280,210,280); p.fill('#FFE4D6'); p.noStroke(); p.ellipse(100, 290, 25, 45); p.ellipse(300, 290, 25, 45); p.noStroke(); p.fill('#F8F8F8'); p.ellipse(95, 320, 10, 20); p.fill('#D9D9D9'); p.ellipse(96, 323, 6, 15); p.fill('#F8F8F8'); p.ellipse(305, 320, 10, 20); p.fill('#D9D9D9'); p.ellipse(306, 323, 6, 15); p.noFill(); p.stroke('#D16A7C'); p.strokeWeight(3); p.arc(200, 360, 50, 25, 0, p.PI); p.noStroke(); p.fill('#FFE4D6'); p.rect(180, 400, 40, 70, 10); p.fill('#800020'); p.rect(80, 450, 250, 200, 80); p.fill('#FFE4D6'); p.triangle(200,500, 150,450 , 250, 450); };
+        });
+        new p5((p) => {
+            let bgColor = '#E3F2FD'; let isWink = false; let strength = 5; let wind = false; let glassesY = 280;
+            p.setup = () => { p.createCanvas(400, 450).parent('canvas-v3'); };
+            p.draw = () => { p.scale(1, 450/600); p.background(bgColor); p.noStroke(); p.fill('#3A2A24'); p.ellipse(200, 300, 300, 400); p.fill('#FFE4D6'); p.ellipse(200, 280, 200, 260); let extra = wind ? 10 : 0; strength = p.map(p.mouseX, 0, p.width, 2, 12); let wave = p.sin(p.frameCount * 0.1) * (strength + extra); p.fill('#3A2A24'); p.rect(100 + wave,150,200,100); p.fill('#FFE4D6'); p.triangle(150 + wave, 250, 180 + wave, 250, 210 + wave, 160); p.fill(255, 170, 180, 120); p.ellipse(140, 320, 45, 25); p.ellipse(260, 320, 45, 25); if (isWink) { p.stroke(0); p.strokeWeight(2); p.line(150, 260, 185, 260); } else { p.noStroke(); p.fill(255); p.ellipse(160, 280, 40, 30); p.fill('#3B2F2F'); p.ellipse(160, 280, 25, 25); p.fill(255); p.ellipse(155, 275, 6, 6); } p.noStroke(); p.fill(255); p.ellipse(240, 280, 40, 30); p.fill('#3B2F2F'); p.ellipse(240, 280, 25, 25); p.fill(255); p.ellipse(235, 275, 6, 6); p.noFill(); p.stroke(0); p.strokeWeight(2); p.arc(160, 275, 40, 20, p.PI, p.TWO_PI); p.arc(240, 275, 40, 20, p.PI, p.TWO_PI); p.noStroke(); p.fill('#FFCCB3'); p.triangle(200, 300, 190, 330, 210, 330); p.fill('#FFE4D6'); p.ellipse(100, 290, 25, 45); p.ellipse(300, 290, 25, 45); let eWave = p.sin(p.frameCount * 0.1) * (strength + extra); p.fill('#F8F8F8'); p.ellipse(95 + eWave, 320, 10, 20); p.fill('#D9D9D9'); p.ellipse(96 + eWave, 323, 6, 15); p.fill('#F8F8F8'); p.ellipse(305 + eWave, 320, 10, 20); p.fill('#D9D9D9'); p.ellipse(306 + eWave, 323, 6, 15); p.noFill(); p.stroke('#D16A7C'); p.strokeWeight(3); p.arc(200, 360, 50, 25, 0, p.PI); p.noStroke(); p.fill('#FFE4D6'); p.rect(180, 400, 40, 70, 10); p.fill('#800020'); p.rect(80, 450, 250, 200, 80); p.fill('#FFE4D6'); p.triangle(200,500, 150,450 , 250, 450); glassesY += 1; if(glassesY > 600) glassesY = 280; p.stroke('#B08968'); p.strokeWeight(3); p.noFill(); p.circle(160, glassesY, 60); p.circle(240, glassesY, 60); p.line(190, glassesY, 210, glassesY); };
+            p.keyPressed = () => { if (p.key === ' ') { wind = !wind; } };
+        });
+    </script>
+</body>
+</html>
